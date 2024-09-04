@@ -1,4 +1,7 @@
-# ProyectoU3
+![image](https://github.com/user-attachments/assets/855442ee-fcb1-41ba-a6bb-f8843178e0c2)# ProyectoU3
+
+![Captura de pantalla 2024-09-04 125116](https://github.com/user-attachments/assets/fa66c7b2-2460-4800-8f9e-602a182d5d1e)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
 
