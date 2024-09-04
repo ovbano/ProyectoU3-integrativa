@@ -1,0 +1,145 @@
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #fffcfc;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    /* Valor alto para que esté por encima de otros elementos */
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar-container {
+    padding: 20px;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-brand {
+    color: #030303;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.sidebar-nav {
+    margin-bottom: 20px;
+}
+
+.sidebar-item {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sidebar-item:hover {
+    color: #ddd;
+}
+
+.sidebar-icon {
+    margin-right: 10px;
+}
+
+.sidebar-footer {
+    color: #fff;
+}
+
+#caja1,
+#caja2,
+#caja3 {
+    margin-bottom: 40px;
+}
+
+.sidebar-text {
+    font-size: 1.5rem;
+    /* Tamaño de fuente más pequeño */
+}
+
+/* Estilo predeterminado para las imágenes dentro de los contenedores */
+.design-container img,
+.uploaded-image-container img {
+    width: 100%;
+    /* Ajusta el tamaño de la imagen */
+    opacity: 1;
+    /* Opacidad predeterminada */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    /* Transición suave para transformación y opacidad */
+}
+
+/* Contenedor adicional para el texto */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo semitransparente */
+    color: white;
+    text-align: center;
+    opacity: 0;
+    /* Oculta el texto por defecto */
+    transition: opacity 0.5s ease;
+    /* Transición suave para la opacidad del texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo del texto */
+.image-overlay p {
+    margin: 0;
+    /* Elimina el margen para que el texto se centre correctamente */
+}
+
+/* Animación al pasar el mouse sobre las imágenes */
+.design-container:hover img,
+.uploaded-image-container:hover img {
+    transform: scale(1.1);
+    /* Aumenta el tamaño de la imagen */
+    opacity: 0.7;
+    /* Reduce la opacidad de la imagen */
+}
+
+/* Muestra el texto al pasar el mouse sobre la imagen */
+.design-container:hover .image-overlay,
+.uploaded-image-container:hover .image-overlay {
+    opacity: 1;
+    /* Muestra el texto */
+}
+
+/* Establece la opacidad de las imágenes */
+.design-container img,
+.uploaded-image-container img {
+    width: 100%;
+    opacity: 0.8;
+    /* Cambia este valor según lo necesites */
+}
+
+/* Ajusta la transparencia del fondo del contenedor */
+.design-container,
+.uploaded-image-container {
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Cambia este valor según lo necesites */
+}
+
+
+.design-container {
+    border: 2px solid #ccc;
+    /* Ajusta el grosor y el color del borde */
+    border-radius: 10px;
+    /* Ajusta el radio de la esquina para dar un aspecto más redondeado */
+    overflow: hidden;
+    /* Oculta el desbordamiento del contenido */
+}

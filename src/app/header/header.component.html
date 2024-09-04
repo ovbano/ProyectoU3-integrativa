@@ -1,0 +1,158 @@
+
+<!-- <div class="spinner-overlay">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden"></span>
+    </div>
+</div> -->
+
+
+<div class="sidebar" role="cdb-sidebar" color="white">
+    <div class="sidebar-container">
+        <div class="sidebar-header">
+            <a class="sidebar-brand">Clima</a>
+            <a class="sidebar-toggler"><i class="fas fa-times"></i></a>
+        </div>
+        <div class="sidebar-nav">
+            <!-- Aquí puedes agregar los elementos de la barra lateral -->
+            <div id="contenedor">
+                <div id="caja1">
+                    <h1 id="temperatura-valor" class="sidebar-text"></h1>
+                    <h1 id="temperatura-descripcion" class="sidebar-text"></h1>
+                </div>
+                <div id="caja2">
+                    <h2 id="ubicacion" class="sidebar-text"></h2>
+                    <img id="icono-animado" src="" alt="" height="128" width="128">
+                </div>
+                <div id="caja3">
+                    <h4>Humedad</h4>
+                    <h1 id="humedad" class="sidebar-text"></h1>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-footer">Sidebar Footer</div>
+    </div>
+</div>
+
+<!-- Topbar Start -->
+<div class="container-fluid bg-light pt-3 d-none d-lg-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center">
+                    <p><i class="fa fa-envelope mr-2"></i>freestyles&#64;gmail.com</p>
+                    <p class="text-body px-3">|</p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+593 98 567 1523</p>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-primary px-3" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-primary pl-3" href="">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+
+<!-- Navbar Start -->
+<div class="container-fluid position-relative nav-bar p-0">
+    <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+            <a href="" class="navbar-brand">
+                <img src="logo.png" alt="Logo " class="logo-img" style="width: 50px;">
+            </a>
+
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <div class="navbar-nav ml-auto py-0">
+                <a href="/login" class="nav-item nav-link active">
+                        Mi Perfil
+                        <i class="bi bi-person-fill"></i>
+                    </a>
+                    
+                    <a href="/home" class="nav-item nav-link active">Inicio
+                        <i class="bi bi-house-door-fill"></i>
+                    </a>
+
+
+                    <a href="/service" class="nav-item nav-link">Diseña
+                        <i class="bi bi-brush-fill"></i>
+                    </a>
+
+
+                    <a class="nav-item nav-link sidebar-opener">Clima
+                        <i class="bi bi-cloud-drizzle-fill"></i>
+                    </a>
+
+
+                    <!-- Aquí está la sección de compras con el icono y el texto -->
+                    <!-- <div class="nav-item dropdown"> -->
+                        <!-- <a href="#" class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Compras <i class="fas fa-shopping-cart"></i>
+                            <span id="cartItemCount" class="badge badge-pill badge-primary">0</span>
+                        </a> -->
+                        <!-- <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                            <table id="lista-carrito" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+
+                            <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                            
+                            <a href="/carrito" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+                                Compra</a>
+                        </div> -->
+                    <!-- </div> -->
+                    <!-- Fin de la sección de compras -->
+
+                    <!-- Aquí está la sección de Conócenos -->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="dropdownConocenos" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Más
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownConocenos">
+
+                            <a href="/about" class="nav-item nav-link">Conócenos
+                                <i class="bi bi-people-fill"></i>
+                            </a>
+
+                            <div href="" class="dropdown-divider"></div>
+
+                            <a href="/contact" class="nav-item nav-link">Contacto
+                                <i class="bi bi-person-circle"></i>
+                            </a>
+
+                            <div class="dropdown-divider"></div>
+
+                            <a href="/reseñas" class="nav-item nav-link sidebar-opener">Reseñas
+                                <i class="bi bi-bookmark-star-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Fin de la sección de Conócenos -->
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

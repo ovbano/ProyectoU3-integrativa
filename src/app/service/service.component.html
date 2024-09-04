@@ -1,0 +1,363 @@
+<!-- service.component.html -->
+
+<!-- Header Start -->
+<div class="container-fluid page-header">
+    <div class="container">
+      <div
+        class="d-flex flex-column align-items-center justify-content-center"
+        style="min-height: 400px"
+      >
+        <h3 class="display-4 text-white text-uppercase">Diseños</h3>
+        <div class="d-inline-flex text-white">
+          <p class="m-0 text-uppercase">
+            <a class="text-white" href="/home">Inicio</a>
+          </p>
+          <i class="fa fa-angle-double-right pt-1 px-3"></i>
+          <p class="m-0 text-uppercase">Diseños</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Header End -->
+  
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Formulario de Personalización -->
+      <div class="col-md-8">
+        <div class="text-center mb-4 mt-md-4">
+          <h3 class="text1">Personaliza:</h3>
+        </div>
+        <form>
+          <div
+            id="productTypeButtons"
+            class="d-flex flex-wrap justify-content-md-around align-items-center mb-4"
+          >
+            <button
+              type="button"
+              [ngClass]="{
+                'btn': true,
+                'btn-primary': selectedProduct.type === 'Notebook',
+                'btn-outline-primary': selectedProduct.type !== 'Notebook'
+              }"
+              (click)="setProductType('Notebook')"
+              class="mb-2"
+            >
+              Cuaderno
+            </button>
+            <button
+              type="button"
+              [ngClass]="{
+                'btn': true,
+                'btn-primary': selectedProduct.type === 'Agenda',
+                'btn-outline-primary': selectedProduct.type !== 'Agenda'
+              }"
+              (click)="setProductType('Agenda')"
+              class="mb-2"
+            >
+              Agenda
+            </button>
+          </div>
+  
+          <div class="color-select-container mb-4">
+            <p class="color-description">Colores Disponibles:</p>
+            <div class="color-select d-flex justify-content-center">
+              <div
+                id="red"
+                class="color-option"
+                [ngClass]="{
+                  'selected': selectedProduct.option === 'red'
+                }"
+                (click)="selectOption('red')"
+                style="background-color: red;"
+              ></div>
+              <div
+                id="blue"
+                class="color-option"
+                [ngClass]="{
+                  'selected': selectedProduct.option === 'blue'
+                }"
+                (click)="selectOption('blue')"
+                style="background-color: blue;"
+              ></div>
+              <div
+                id="black"
+                class="color-option"
+                [ngClass]="{
+                  'selected': selectedProduct.option === 'black'
+                }"
+                (click)="selectOption('black')"
+                style="background-color: black;"
+              ></div>
+            </div>
+          </div>
+  
+          <div class="texture-select-container mb-4">
+            <p class="texture-description">Diseños prediseñados disponibles:</p>
+            <div class="texture-select d-flex justify-content-center">
+              <img
+                src="{{ selectedProduct.image[selectedProduct.type]['texture1'] }}"
+                alt="Texture 1"
+                class="texture-option"
+                [ngClass]="{
+                  'selected': selectedProduct.option === 'texture1'
+                }"
+                (click)="selectOption('texture1')"
+              />
+              <img
+                src="{{ selectedProduct.image[selectedProduct.type]['texture2'] }}"
+                alt="Texture 2"
+                class="texture-option"
+                [ngClass]="{
+                  'selected': selectedProduct.option === 'texture2'
+                }"
+                (click)="selectOption('texture2')"
+              />
+              <img
+                src="{{ selectedProduct.image[selectedProduct.type]['texture3'] }}"
+                alt="Texture 3"
+                class="texture-option"
+                [ngClass]="{
+                  'selected': selectedProduct.option === 'texture3'
+                }"
+                (click)="selectOption('texture3')"
+              />
+            </div>
+          </div>
+  
+          <div class="file-upload-container">
+            <label for="customImage">Cargar Imagen Personalizada:</label>
+            <input
+              type="file"
+              id="customImage"
+              accept="image/*"
+              (change)="handleImageUpload($event)"
+              class="file-input"
+            />
+            <label for="customImage" class="file-label">
+                <i class="fas fa-spinner fa-pulse"></i>
+                <span *ngIf="!isLoading">Seleccionar Imagen</span>
+                <span *ngIf="isLoading">Cargando...</span>
+              </label>
+            <div *ngIf="customImage" class="custom-image-container">
+            <img [src]="customImage" alt="Imagen Personalizada" class="custom-image" />
+            <button (click)="removeCustomImage()" class="remove-image-button">✕</button>
+          </div>
+          </div>
+  
+          <!-- Campo de texto personalizado -->
+          <div class="form-group mt-3">
+            <label for="customText">Texto Personalizado:</label>
+            <input
+              type="text"
+              id="customText"
+              class="form-control"
+              placeholder="Ingrese su texto"
+              [(ngModel)]="customText"
+              name="customText"
+            />
+          </div>
+  
+          <!-- Opciones adicionales -->
+          <div class="form-check mt-3">
+            <input
+              type="checkbox"
+              id="calendarCheckbox"
+              class="form-check-input"
+              [(ngModel)]="includeCalendar"
+              name="includeCalendar"
+            />
+            <label for="calendarCheckbox" class="form-check-label">
+              Calendario (+$0.50)
+            </label>
+          </div>
+  
+          <div class="form-check mt-2">
+            <input
+              type="checkbox"
+              id="separatorCheckbox"
+              class="form-check-input"
+              [(ngModel)]="includeSeparator"
+              name="includeSeparator"
+            />
+            <label for="separatorCheckbox" class="form-check-label">
+              Separador (+$0.25)
+            </label>
+          </div>
+  
+          <div class="form-check mt-2">
+            <input
+              type="checkbox"
+              id="numberedSheetsCheckbox"
+              class="form-check-input"
+              [(ngModel)]="includeNumberedSheets"
+              name="includeNumberedSheets"
+            />
+            <label for="numberedSheetsCheckbox" class="form-check-label">
+              Hojas Numeradas (+$0.30)
+            </label>
+          </div>
+  
+          <!-- Mostrar precio actual -->
+          <div class="current-price mt-4">
+            <h5>
+              Precio Actual: $
+              {{
+                getCurrentPrice() +
+                  (includeCalendar ? 0.5 : 0) +
+                  (includeSeparator ? 0.25 : 0) +
+                  (includeNumberedSheets ? 0.3 : 0) +
+                  (customImage ? 1.0 : 0)
+              }}
+              USD
+            </h5>
+          </div>
+  
+          <!-- Botón para agregar al carrito -->
+          <button
+            type="button"
+            class="btn btn-success mt-3"
+            (click)="addToCart()"
+          >
+            Agregar al Carrito
+          </button>
+        </form>
+      </div>
+  
+      <!-- Vista Previa del Producto -->
+      <div class="col-md-4">
+        <!-- <div class="text-center mt-4 position-relative">
+          <div class="design-container">
+            <img
+              [src]="
+                customImage
+                  ? customImage
+                  : selectedProduct.image[selectedProduct.type][
+                      selectedProduct.option
+                    ]
+              "
+              alt="Vista Previa"
+              class="img-fluid arkanas-design"
+            />
+            <div *ngIf="customText" class="custom-text-overlay">
+              <p>{{ customText }}</p>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="text-center mt-4 position-relative">
+          <div class="design-container position-relative">
+            <!-- Imagen base (textura seleccionada) -->
+            <img
+              [src]="selectedProduct.image[selectedProduct.type][selectedProduct.option]"
+              alt="Vista Previa"
+              class="img-fluid arkanas-design"
+            />
+      
+            <!-- Imagen personalizada -->
+            <div class="custom-image-overlay">
+              <img
+                *ngIf="customImage"
+                [src]="customImage"
+                alt="Imagen Personalizada"
+                class="custom-image"
+              />
+            </div>
+      
+            <!-- Texto personalizado -->
+            <div *ngIf="customText" class="custom-text-overlay">
+              <p>{{ customText }}</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Botón para abrir el carrito -->
+        <div class="text-center mt-4">
+          <button
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#cartModal"
+          >
+            Ver Carrito ({{ cartItemCount }})
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal del Carrito -->
+  <div
+    class="modal fade"
+    id="cartModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="cartModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Producto</th>
+                <th>Precio Unitario</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of cart.items; let i = index">
+                <td><img [src]="item.image" alt="{{ item.name }}" width="50" height="50" /></td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.price | currency: 'USD' }}</td>
+                <td>
+                    <input
+                      type="number"
+                      [(ngModel)]="item.quantity"
+                      (change)="updateCartItem(i)"
+                      min="1"
+                      class="form-control"
+                      style="width: 80px;"
+                    />
+                  </td>
+                <td>{{ item.price * item.quantity | currency: 'USD' }}</td>
+                <td>
+                  <button
+                    class="btn btn-danger btn-sm"
+                    (click)="removeFromCart(i)"
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-right">
+            <h5>Total: {{ cart.total | currency: 'USD' }}</h5>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearCart()">
+            Vaciar Carrito
+          </button>
+          <button type="button" class="btn btn-success" (click)="confirmPurchase()">
+            Confirmar Compra
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

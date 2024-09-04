@@ -1,0 +1,156 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    margin-top: 30px;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border-radius: 10px;
+    border: none;
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #666;
+}
+
+.satisfaction {
+    display: flex;
+    align-items: center;
+}
+
+.satisfaction .star {
+    color: #f4c150;
+    margin-right: 5px;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.pagination .page-link {
+    border-radius: 30px !important;
+    color: #fff !important;
+    background-color: #007bff !important;
+    border: none !important;
+}
+
+.pagination .page-link:hover {
+    background-color: #0056b3 !important;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #fffcfc;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    /* Valor alto para que esté por encima de otros elementos */
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar-container {
+    padding: 20px;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-brand {
+    color: #030303;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.sidebar-nav {
+    margin-bottom: 20px;
+}
+
+.sidebar-item {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sidebar-item:hover {
+    color: #ddd;
+}
+
+.sidebar-icon {
+    margin-right: 10px;
+}
+
+.sidebar-footer {
+    color: #fff;
+}
+
+#caja1,
+#caja2,
+#caja3 {
+    margin-bottom: 40px;
+}
+
+.sidebar-text {
+    font-size: 1.5rem;
+    /* Tamaño de fuente más pequeño */
+}
+
+/* Animación de hover para imágenes de usuario */
+.user-img {
+    transition: transform 0.3s ease;
+}
+
+.user-img:hover {
+    transform: scale(1.1);
+}
+
+/* Animación de hover para botones */
+.btn {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
