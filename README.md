@@ -1,8 +1,17 @@
 Visualización previa:
-
+/Home
 ![image](https://github.com/user-attachments/assets/855442ee-fcb1-41ba-a6bb-f8843178e0c2)
-
+/service
 ![Captura de pantalla 2024-09-04 125245](https://github.com/user-attachments/assets/7db59b82-6c7b-4ad4-af2b-9281ed7abc15)
+/service: proceso de compra
+![Captura de pantalla 2024-09-04 125407](https://github.com/user-attachments/assets/d1e32bd6-06ec-46c3-8bc4-4cff42b41478)
+/clima
+![Captura de pantalla 2024-09-04 125339](https://github.com/user-attachments/assets/4852944c-94f7-4a38-9949-095c843c35e1)
+/contactanos
+![Captura de pantalla 2024-09-04 125454](https://github.com/user-attachments/assets/74efbec3-89fc-4d27-bdf7-b4319afaaf77)
+/reseñas
+![Captura de pantalla 2024-09-04 125519](https://github.com/user-attachments/assets/cecb4fd7-f31d-4c90-8e12-038e40cea2be)
+
 
 
 
